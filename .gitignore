@@ -1,33 +1,34 @@
-# Gradle files
-.gradle/
-build/
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
 
-# Local configuration file (sdk path, etc)
-local.properties
+# testing
+/coverage
 
-# Log/OS Files
-*.log
+# production
+/build
 
-# Android Studio generated files and folders
-captures/
-.externalNativeBuild/
-.cxx/
-*.apk
-output.json
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# IntelliJ
-*.iml
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE files
 .idea/
-misc.xml
-deploymentTargetDropDown.xml
-render.experimental.xml
+.vscode/
+*.sublime-project
+*.sublime-workspace
 
-# Keystore files
-*.jks
-*.keystore
-
-# Google Services (e.g. APIs or Firebase)
-google-services.json
-
-# Android Profiling
-*.hprof
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
