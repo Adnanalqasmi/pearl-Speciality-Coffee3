@@ -1,153 +1,38 @@
-// index.js
-import React, { useState } from 'react';
-const LoginSystem = () => {
-// حالة اللغة وبيانات تسجيل الدخول
-const [language, setLanguage] = useState('ar');
-const [username, setUsername] = useState('');
-const [password, setPassword] = useState('');
-const [error, setError] = useState('');
-const [isLoggedIn, setIsLoggedIn] = useState(false);
+# Pearl Specialty Coffee ☕
 
-// الترجمات
-const translations = {
-ar: {
-title: 'تسجيل الدخول',
-username: 'اسم المستخدم',
-password: 'كلمة المرور',
-login: 'دخول',
-systemName: 'نظام إدارة المقهى',
-error: 'اسم المستخدم أو كلمة المرور غير صحيحة'
-},
-en: {
-title: 'Login',
-username: 'Username',
-password: 'Password',
-login: 'Login',
-systemName: 'Cafe Management System',
-error: 'Invalid username or password'
-}
-};
+نظام إدارة متكامل لمقهى Pearl Specialty Coffee
 
-// بيانات المستخدمين
-const users = {
-admin: {
-username: 'admin',
-password: 'Pearl2024@Admin',
-role: 'admin'
-},
-employee: {
-username: 'employee',
-password: 'Pearl2024@Emp',
-role: 'employee'
-}
-};
+## مميزات النظام 🌟
+- نظام تسجيل دخول متعدد المستخدمين
+- دعم اللغتين العربية والإنجليزية
+- لوحة تحكم للإدارة والموظفين
+- إدارة المنتجات والطلبات
+- نظام تتبع المخزون
+- تقارير المبيعات
 
-// دالة تسجيل الدخول
-const handleLogin = () => {
-const user = Object.values(users).find(
-user => user.username === username && user.password === password
-);
+## معلومات تسجيل الدخول 🔑
+### حساب المدير
+- اسم المستخدم: admin
+- كلمة المرور: Pearl2024@Admin
 
-if (user) {
-setIsLoggedIn(true);
-setError('');
-} else {
-setError(translations[language].error);
-}
-};
+### حساب الموظف
+- اسم المستخدم: employee
+- كلمة المرور: Pearl2024@Emp
 
-// تبديل اللغة
-const toggleLanguage = () => {
-setLanguage(language === 'ar' ? 'en' : 'ar');
-};
+## التقنيات المستخدمة 💻
+- React
+- Tailwind CSS
+- GitHub Pages
 
-// واجهة تسجيل الدخول
-const loginJSX = `
-<div class="min-h-screen flex items-center justify-center bg-gray-100">
-<div class="bg-white p-8 rounded-lg shadow-md w-96">
-<button 
-class="mb-4 px-3 py-1 bg-gray-100 rounded"
-onClick={toggleLanguage}
->
-{language === 'ar' ? 'English' : 'عربي'}
-</button>
+## كيفية التشغيل محلياً 🚀
+1. قم بتنزيل المشروع
+```bash
+git clone https://github.com/[username]/pearl-Specialty-Coffee3.git
+cd pearl-Specialty-Coffee3
+```
 
-<div class="text-center mb-6">
-<h1 class="text-2xl font-bold">Pearl Specialty Coffee</h1>
-<p class="text-gray-600">{translations[language].systemName}</p>
-</div>
+2. قم بفتح ملف index.html في المتصفح
 
-<div class="space-y-4">
-<div>
-<label class="block text-gray-700 mb-2">
-{translations[language].username}
-</label>
-<input
-type="text"
-class="w-full border rounded px-3 py-2"
-value={username}
-onChange={(e) => setUsername(e.target.value)}
-dir={language === 'ar' ? 'rtl' : 'ltr'}
-/>
-</div>
-
-<div>
-<label class="block text-gray-700 mb-2">
-{translations[language].password}
-</label>
-<input
-type="password"
-class="w-full border rounded px-3 py-2"
-value={password}
-onChange={(e) => setPassword(e.target.value)}
-dir={language === 'ar' ? 'rtl' : 'ltr'}
-/>
-</div>
-
-{error && (
-<p class="text-red-500 text-sm text-center">{error}</p>
-)}
-
-<button 
-class="w-full bg-blue-600 text-white rounded py-2 hover:bg-blue-700"
-onClick={handleLogin}
->
-{translations[language].login}
-</button>
-</div>
-</div>
-</div>
-`;
-
-return isLoggedIn ? <DashboardComponent /> : loginJSX;
-};
-
-// مكون لوحة التحكم
-const DashboardComponent = () => {
-return `
-<div class="min-h-screen bg-gray-100">
-<header class="bg-white shadow">
-<div class="max-w-7xl mx-auto py-6 px-4">
-<h1 class="text-3xl font-bold text-gray-900">
-Pearl Specialty Coffee Dashboard
-</h1>
-</div>
-</header>
-<main class="max-w-7xl mx-auto py-6 px-4">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="bg-white overflow-hidden shadow rounded-lg p-6">
-<h3 class="text-lg font-medium text-gray-900">Orders</h3>
-</div>
-<div class="bg-white overflow-hidden shadow rounded-lg p-6">
-<h3 class="text-lg font-medium text-gray-900">Products</h3>
-</div>
-<div class="bg-white overflow-hidden shadow rounded-lg p-6">
-<h3 class="text-lg font-medium text-gray-900">Settings</h3>
-</div>
-</div>
-</main>
-</div>
-`;
-};
-
-export default LoginSystem;
+## للتواصل والدعم 📞
+- البريد الإلكتروني: [your-email]
+- الهاتف: [your-phone]
